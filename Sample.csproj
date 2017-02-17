@@ -58,20 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="imodelAccessForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="imodelAccessForm.Designer.cs">
-      <DependentUpon>imodelAccessForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="imodelAccessForm.resx">
-      <DependentUpon>imodelAccessForm.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
