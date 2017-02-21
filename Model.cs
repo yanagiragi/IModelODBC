@@ -35,8 +35,16 @@ namespace Bentley.ODBC.Sample
         {
             Data.WriteXml(this.fileName + ".xml");
 
+            try
+            {
+                Close();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
             // Bad Ways But Works
-            Environment.FailFast("Done");
+            // Environment.FailFast("Done");
             // Alternative way :
             // System.Diagnostics.Process.GetCurrentProcess().Kill();
         }

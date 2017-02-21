@@ -9,6 +9,7 @@
 |
 +--------------------------------------------------------------------------------------*/
 using System;
+using System.IO;
 
 namespace Bentley.ODBC.Sample
 {
@@ -17,10 +18,22 @@ namespace Bentley.ODBC.Sample
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        [STAThread]
+        //[STAThread]
         static void Main ()
         {
-            Model m = new Model("D:\\_Course\\_MicroStation\\Models\\Unit\\pipe\\rd_02.i.dgn");
+            //Model m = new Model(@"D:\_Course\_MicroStation\Models_Bk\PDS_iModel\UnitComponent\pipe\rd_02.i.dgn");
+            ypDumpAttributesToFiles(@"D:\_Course\_MicroStation\Models_Converted\");
         }
+        static void ypDumpAttributesToFiles(string imodeldestFolderPath)
+        {
+            string[] filePaths = Directory.GetFiles(imodeldestFolderPath, "*.i.dgn", SearchOption.AllDirectories);
+
+            for (int i = 0; i < filePaths.Length; ++i)
+            {
+                Console.WriteLine(filePaths[i]);
+                Model m = new Model(filePaths[i]);
+            }
+        }
+
     }
 }
